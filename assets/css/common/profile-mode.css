@@ -1,25 +1,96 @@
-.buttons,
-.main .profile {
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+.profile-container {
     display: flex;
-    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* Allows columns to stack on smaller screens */
 }
 
-.main .profile {
-    align-items: center;
-    min-height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--gap) * 2));
+.info-column {
+    flex: 1;
+    max-width: 250px;
     text-align: center;
-}
-
-.profile .profile_inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    /* Added to ensure horizontal centering */
 }
 
-.profile img {
+.profile-image {
     border-radius: 50%;
+    margin-bottom: 1rem;
+    display: block;
+    margin: 24px auto;
+    /* This will ensure the image is centered */
 }
+
+.profile-title {
+    font-size: 28px;
+    font-weight: 500;
+    font-family: "CrimCrimson Pro, serif";
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.profile-position {
+    font-size: 17.6px;
+    font-weight: 400;
+    font-family: "CrimCrimson Pro, serif";
+    line-height: 1.5;
+    color: #595959;
+}
+
+.profile-affiliation {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "CrimCrimson Pro, serif";
+    line-height: 1.5;
+    color: #595959;
+}
+
+.profile-email {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Ubuntu Mono";
+    line-height: 1.5;
+    color: #595959;
+}
+
+.content-column {
+    flex: 2;
+    padding: 1rem;
+    max-width: 750px;
+}
+
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        /* Stacks the columns vertically */
+        align-items: center;
+        /* Ensures the content is centered on small screens */
+    }
+
+    .info-column {
+        max-width: 100%;
+        /* Ensures the header takes full width on smaller screens */
+    }
+
+    .content-column {
+        max-width: 100%;
+        /* Ensures the content takes full width on smaller screens */
+        padding: 0 1rem;
+        /* Adjust the padding for small screens */
+    }
+}
+
+
+.profile-content {}
+
 
 .buttons {
     flex-wrap: wrap;
