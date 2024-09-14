@@ -2,6 +2,7 @@
     <header class="info-column">
         {{- with site.Params.profileMode }}
         <div>
+            {{ $img_alt := .imageTitle | default "profile image" }}
             {{- if .imageUrl -}}
             {{- $img := "" }}
             {{- if not (urls.Parse .imageUrl).IsAbs }}
@@ -24,21 +25,21 @@
             {{- $img = $img.Resize "150x150" }}
             {{- end }}
             {{- end }}
-            <img class="profile-image" draggable="false" src="{{ $img.Permalink }}" alt="{{ .imageTitle | default " profile image" }}"
+            <img class="profile-image" draggable="false" src="{{ $img.Permalink }}" alt="{{ $img_alt }}"
                 title="{{ .imageTitle }}" height="{{ .imageHeight | default 150 }}"
                 width="{{ .imageWidth | default 150 }}" />
             {{- else }}
-            <img class="profile-image" draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ .imageTitle | default " profile image" }}"
+            <img class="profile-image" draggable="false" src="{{ .imageUrl | absURL }}" alt="{{ $img_alt }}"
                 title="{{ .imageTitle }}" height="{{ .imageHeight | default 150 }}"
                 width="{{ .imageWidth | default 150 }}" />
             {{- end }}
             {{- end }}
             <h1 class="profile-title">{{ .title | default site.Title | markdownify }}</h1>
-            <position class="profile-position">{{.position}}</position>
+            <span class="profile-position">{{.position}}</span>
             <br>
             <span class="profile-affiliation">{{.affiliation}}</span>
             <br>
-            <email class="profile-email">hesicheng20 (at) gmail.com</email>
+            <span class="profile-email">hesicheng20 (at) gmail.com</span>
             <br>
             <br>
             {{- partial "social_icons.html" -}}
@@ -47,6 +48,8 @@
     </header>
 
     <section class="content-column">
-        {{- .Content -}} <!-- This will render the content from the markdown file -->
+        <div class="profile-content">
+            {{- .Content -}} <!-- This will render the content from the markdown file -->
+        </div>
     </section>
 </div>

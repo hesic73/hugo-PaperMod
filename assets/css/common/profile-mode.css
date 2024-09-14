@@ -16,7 +16,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #595959;
     /* Added to ensure horizontal centering */
+}
+
+.dark .info-column {
+    color: #dadbdf;
 }
 
 .profile-image {
@@ -33,6 +38,7 @@
     font-family: "CrimCrimson Pro, serif";
     line-height: 1.1;
     margin-bottom: 20px;
+    color: var(--primary);
 }
 
 .profile-position {
@@ -40,7 +46,6 @@
     font-weight: 400;
     font-family: "CrimCrimson Pro, serif";
     line-height: 1.5;
-    color: #595959;
 }
 
 .profile-affiliation {
@@ -48,7 +53,6 @@
     font-weight: 400;
     font-family: "CrimCrimson Pro, serif";
     line-height: 1.5;
-    color: #595959;
 }
 
 .profile-email {
@@ -56,13 +60,12 @@
     font-weight: 400;
     font-family: "Ubuntu Mono";
     line-height: 1.5;
-    color: #595959;
 }
 
 .content-column {
     flex: 2;
     padding: 1rem;
-    max-width: 750px;
+    max-width: 650px;
 }
 
 
@@ -89,7 +92,65 @@
 }
 
 
-.profile-content {}
+.profile-content {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "CrimCrimson Pro, serif";
+    line-height: 1.5;
+    color: #595959;
+}
+
+.dark .profile-content {
+    color: #dadbdf;
+}
+
+.profile-content h2 {
+    font-weight: 500;
+    font-size: 25.12px;
+    margin: 2px 0px 15px;
+}
+
+.profile-content strong {
+    color: #222;
+    font-weight: 500
+}
+
+.dark .profile-content strong {
+    color: #eeeff0;
+}
+
+.profile-content ul {
+    padding-left: 40px;
+}
+
+.profile-content p,
+ul,
+ol,
+table,
+pre,
+dl {
+    margin-bottom: 20px;
+}
+
+.profile-content h1,
+h2,
+h3 {
+    line-height: 1.1
+}
+
+.profile-content h1 {
+    font-size: 28px
+}
+
+.profile-content a {
+    color: var(--secondary);
+    text-decoration: underline
+}
+
+.profile-content a:hover {
+    color: var(--primary);
+}
+
 
 
 .buttons {
